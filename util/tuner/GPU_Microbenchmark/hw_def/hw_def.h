@@ -13,6 +13,8 @@
 
 // #include "volta_TITANV_hw_def.h"
 
-#include "ampere_A100_hw_def.h"
+//#include "ampere_A100_hw_def.h"
+
+#include "ampere_RTXA6000_hw_def.h"
 
 #endif
