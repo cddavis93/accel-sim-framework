@@ -124,12 +124,12 @@ for bench in benchmarks:
             sh_contents += "export TERMINATE_UPON_LIMIT=0; "
             exec_path = ". " + exec_path
 
-            if options.kernel_number > 0:
+            if int(options.kernel_number) > 0:
                 sh_contents +=  ('\nexport DYNAMIC_KERNEL_RANGE="0-'+str(options.kernel_number)+'"\n')
             else:
                 sh_contents +=  ('\nexport DYNAMIC_KERNEL_RANGE="0-'+str(50)+'"\n')
         else:
-            if options.kernel_number > 0:
+            if int(options.kernel_number) > 0:
                 sh_contents +=  ('\nexport DYNAMIC_KERNEL_RANGE="0-'+str(options.kernel_number)+'"\n')
             else:
                 sh_contents +=  ('\nexport DYNAMIC_KERNEL_RANGE=""\n')
@@ -163,9 +163,9 @@ for bench in benchmarks:
             + this_trace_folder
             + " ; rm -f "
             + this_trace_folder
-            + "/*.trace ; rm -f "
+            + "/*.trace.xz ; rm -f "
             + this_trace_folder
-            + "/kernelslist "
+            + "/kernelslist_* "
         )
 
         open(os.path.join(this_run_dir, "run.sh"), "w").write(sh_contents)
