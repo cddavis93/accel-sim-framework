@@ -1,0 +1,3 @@
+
+=== STDERR ===
+./gpu-simulator/bin/debug/accel-sim.out: symbol lookup error: ./gpu-simulator/bin/debug/accel-sim.out: undefined symbol: _ZN15shader_core_ctx9warp_exitEj

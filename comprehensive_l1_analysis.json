@@ -1,0 +1,22 @@
+{
+  "config": {
+    "skip_l1d": 0
+  },
+  "l1_cache": {
+    "Global Read Hits": 0,
+    "Global Read Misses": 12500,
+    "Global Read Total": 50000,
+    "Global Write Hits": 0,
+    "Global Write Misses": 6250,
+    "Global Write Total": 25000
+  },
+  "l2_cache": {
+    "Total Accesses": 75000,
+    "Total Misses": 75000,
+    "Miss Rate": 1.0,
+    "Global Read Hits": 0,
+    "Global Read Misses": 12500,
+    "Global Write Hits": 0,
+    "Global Write Misses": 6250
+  }
+}
