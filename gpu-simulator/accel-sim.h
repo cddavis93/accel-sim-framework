@@ -18,6 +18,9 @@
 #include "option_parser.h"
 #include "trace_driven.h"
 
+// Add yyerror function for bison/flex parser
+extern "C" void yyerror(const char *s);
+
 class accel_sim_framework {
  public:
   accel_sim_framework(int argc, const char **argv);

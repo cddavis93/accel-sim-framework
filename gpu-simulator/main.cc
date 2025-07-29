@@ -3,6 +3,11 @@
 
 #include "accel-sim.h"
 
+// Add missing yyerror function for bison/flex
+extern "C" void yyerror(const char *s) {
+  fprintf(stderr, "Parse error: %s\n", s);
+}
+
 /* TO DO:
  * NOTE: the current version of trace-driven is functionally working fine,
  * but we still need to improve traces compression and simulation speed.

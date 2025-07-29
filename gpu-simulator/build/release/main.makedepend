@@ -1,0 +1,6 @@
+# DO NOT DELETE
+
+./build/release/main.o: accel-sim.h /usr/include/math.h /usr/include/stdio.h
+./build/release/main.o: /usr/include/time.h /usr/include/features.h
+./build/release/main.o: /usr/include/features-time64.h
+./build/release/main.o: /usr/include/stdc-predef.h

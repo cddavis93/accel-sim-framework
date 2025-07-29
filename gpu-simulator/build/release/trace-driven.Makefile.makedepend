@@ -1,0 +1,18 @@
+# DO NOT DELETE
+
+../build/release/trace_driven.o: /usr/include/math.h /usr/include/stdio.h
+../build/release/trace_driven.o: /usr/include/time.h /usr/include/features.h
+../build/release/trace_driven.o: /usr/include/features-time64.h
+../build/release/trace_driven.o: /usr/include/stdc-predef.h
+../build/release/trace_driven.o: ../ISA_Def/accelwattch_component_mapping.h
+../build/release/trace_driven.o: ../ISA_Def/trace_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/ampere_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/kepler_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/pascal_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/trace_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/turing_opcode.h
+../build/release/trace_driven.o: ../ISA_Def/volta_opcode.h trace_driven.h
+../build/release/trace_driven.o: /usr/include/assert.h /usr/include/stdlib.h
+../build/release/trace_driven.o: /usr/include/alloca.h
+../build/release/trace_driven.o: ../trace-parser/trace_parser.h
+../build/release/trace_driven.o: /usr/include/stdint.h

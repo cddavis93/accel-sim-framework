@@ -1,0 +1,10 @@
+# DO NOT DELETE
+
+../build/release/trace_parser.o: /usr/include/math.h /usr/include/stdio.h
+../build/release/trace_parser.o: /usr/include/time.h /usr/include/features.h
+../build/release/trace_parser.o: /usr/include/features-time64.h
+../build/release/trace_parser.o: /usr/include/stdc-predef.h
+../build/release/trace_parser.o: /usr/include/errno.h /usr/include/signal.h
+../build/release/trace_parser.o: /usr/include/unistd.h trace_parser.h
+../build/release/trace_parser.o: /usr/include/assert.h /usr/include/stdint.h
+../build/release/trace_parser.o: /usr/include/stdlib.h /usr/include/alloca.h
