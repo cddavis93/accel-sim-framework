@@ -1079,5 +1079,5 @@ ExpressGNN:
     data_dirs: ""
     execs:
         - EGNN.py:
-            - args: -data_root $GPUAPPS_ROOT/src/ExpressGNN/data/kinship/S1 -rule_filename cleaned_rules_weight_larger_than_0.9.txt -slice_dim 16 -num_epochs 1 -batchsize 16 -num_batches 10 -use_gcn 1 -num_hops 1 -embedding_size 128 -gcn_free_size 127 -patience 20 -lr_decay_patience 100 -entropy_temp 1 -load_method 0 -exp_folder exp -exp_name cora -device cuda
+#            - args: -data_root $GPUAPPS_ROOT/src/ExpressGNN/data/kinship/S1 -rule_filename cleaned_rules_weight_larger_than_0.9.txt -slice_dim 16 -num_epochs 1 -batchsize 16 -num_batches 10 -use_gcn 1 -num_hops 1 -embedding_size 128 -gcn_free_size 127 -patience 20 -lr_decay_patience 100 -entropy_temp 1 -load_method 0 -exp_folder exp -exp_name cora -device cuda
             - args: -data_root $GPUAPPS_ROOT/src/ExpressGNN/data/cora/S1 -rule_filename cleaned_rules_weight_larger_than_0.9.txt -slice_dim 16 -num_epochs 1 -batchsize 16 -num_batches 10 -use_gcn 1 -num_hops 1 -embedding_size 128 -gcn_free_size 127 -patience 20 -lr_decay_patience 100 -entropy_temp 1 -load_method 0 -exp_folder exp -exp_name cora -device cuda
