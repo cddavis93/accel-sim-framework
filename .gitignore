@@ -1,7 +1,5 @@
 env-setup/
 gpu-app-collection/
-hw_run/
-sim_run_*
 *.DS_Store*
 *.csv
 *.csv#
@@ -15,3 +13,7 @@ gpu-simulator/accel_sim.pyi
 compile_commands.json
 .cache
 exp/
+sim_run_12.8/gpgpu-sim-builds/
+hw_run/traces/device-0/12.8/main.py/
+hw_run/traces/device-1/12.8/main.py/
+hw_run/traces/device-2/12.8/main.py/

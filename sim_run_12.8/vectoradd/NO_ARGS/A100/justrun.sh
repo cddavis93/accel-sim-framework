@@ -1,0 +1,1 @@
+ /home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/gpgpu-sim-builds/accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''/accel-sim.out  -config ./gpgpusim.config -trace ./traces/kernelslist.g | tee gpgpu-sim-out_`date '+%b_%d_%H:%M.%S'`.txt

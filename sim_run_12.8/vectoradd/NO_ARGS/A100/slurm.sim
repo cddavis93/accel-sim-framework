@@ -1,0 +1,55 @@
+#! /bin/bash
+#SBATCH -J vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''
+#SBATCH --threads-per-core=1
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --mem-per-cpu=4G
+#SBACTH --time=200:00:00,
+#SBATCH -p batch
+#SBATCH --mail-type=END,FAIL
+#SBATCH --export=ALL
+#SBATCH --output=/tmp/vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.o%j
+#SBATCH --error=/tmp/vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.e%j
+
+copy_output() {
+    mv /tmp/vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.e18 ./vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.e18
+    mv /tmp/vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.o18 ./vectoradd-NO_ARGS.accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''.o18
+}
+
+trap copy_output ERR
+
+#citing https://stackoverflow.com/questions/35800082/how-to-trap-err-when-using-set-e-in-bash
+#Setting -E alongside -e makes any trap on ERR inherited by shell funcs, command substitutions and commands executed in a subshell environment
+set -eE
+
+if [ "$GPGPUSIM_SETUP_ENVIRONMENT_WAS_RUN" != "1" ]; then
+    export GPGPUSIM_ROOT=/home/cory/accel-sim-framework/gpu-simulator/gpgpu-sim
+    source $GPGPUSIM_ROOT/setup_environment
+else
+    echo "Skipping setup_environment - already set"
+fi
+
+echo "doing: export -n PTX_SIM_USE_PTX_FILE"
+export -n PTX_SIM_USE_PTX_FILE
+echo "doing: export LD_LIBRARY_PATH=/home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/gpgpu-sim-builds/accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b'':$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH=/home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/gpgpu-sim-builds/accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b'':$LD_LIBRARY_PATH
+echo "doing: cd /home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/vectoradd/NO_ARGS/A100"
+cd /home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/vectoradd/NO_ARGS/A100
+echo "doing: export OPENCL_CURRENT_TEST_PATH=/home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/vectoradd/NO_ARGS/A100"
+export OPENCL_CURRENT_TEST_PATH=/home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/vectoradd/NO_ARGS/A100
+echo "doing: export OPENCL_REMOTE_GPU_HOST=REPLACE_REMOTE_HOST"
+export OPENCL_REMOTE_GPU_HOST=REPLACE_REMOTE_HOST
+echo "doing "
+
+echo "doing: export PATH=/home/cory/accel-sim-framework/gpu-simulator/gpgpu-sim/bin:/usr/local/cuda-12.8/bin:/home/cory/miniconda3/envs/ExpressGNN/bin:/usr/local/cuda-12.8/bin:/opt/AMDuProf_4.0-341/bin:/usr/bin:/home/cory/.vscode-server/cli/servers/Stable-7adae6a56e34cb64d08899664b814cf620465925/server/bin/remote-cli:/home/cory/.local/bin:/home/cory/miniconda3/condabin:/usr/local/cuda-12.8/bin:/opt/AMDuProf_4.0-341/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/cory/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts:/home/cory/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand"
+export PATH=/home/cory/accel-sim-framework/gpu-simulator/gpgpu-sim/bin:/usr/local/cuda-12.8/bin:/home/cory/miniconda3/envs/ExpressGNN/bin:/usr/local/cuda-12.8/bin:/opt/AMDuProf_4.0-341/bin:/usr/bin:/home/cory/.vscode-server/cli/servers/Stable-7adae6a56e34cb64d08899664b814cf620465925/server/bin/remote-cli:/home/cory/.local/bin:/home/cory/miniconda3/condabin:/usr/local/cuda-12.8/bin:/opt/AMDuProf_4.0-341/bin:/usr/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/cory/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts:/home/cory/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand
+
+# Uncomment to force blocking torque launches
+# this needs to be commented for concurrent kernel ptx mode
+echo "doing export CUDA_LAUNCH_BLOCKING=1"
+export CUDA_LAUNCH_BLOCKING=1
+
+
+echo "doing:  /home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/gpgpu-sim-builds/accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''/accel-sim.out  -config ./gpgpusim.config -trace ./traces/kernelslist.g"
+ /home/cory/accel-sim-framework/util/job_launching/../../sim_run_12.8/gpgpu-sim-builds/accelsim-commit-39eb185_modified_0.0_25-07-18-17-53-02b''/accel-sim.out  -config ./gpgpusim.config -trace ./traces/kernelslist.g
+copy_output
