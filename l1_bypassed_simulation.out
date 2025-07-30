@@ -57,7 +57,7 @@ GPGPU-Sim: Configuration options:
 -gpgpu_smem_latency                    29 # smem Latency
 -gpgpu_cache:dl1PrefL1                 none # per-shader L1 data cache config  {<sector?>:<nsets>:<bsize>:<assoc>,<rep>:<wr>:<alloc>:<wr_alloc>:<set_index_fn>,<mshr>:<N>:<merge>,<mq>:<fifo_entry>,<data_port_width> | none}
 -gpgpu_cache:dl1PrefShared                 none # per-shader L1 data cache config  {<sector?>:<nsets>:<bsize>:<assoc>,<rep>:<wr>:<alloc>:<wr_alloc>:<set_index_fn>,<mshr>:<N>:<merge>,<mq>:<fifo_entry>,<data_port_width> | none}
--gpgpu_gmem_skip_L1D                    0 # global memory access skip L1D cache (implements -Xptxas -dlcm=cg, default=no skip)
+-gpgpu_gmem_skip_L1D                    1 # global memory access skip L1D cache (implements -Xptxas -dlcm=cg, default=no skip)
 -gpgpu_perfect_mem                      0 # enable perfect memory mode (no cache miss)
 -n_regfile_gating_group                    4 # group of lanes that should be read/written together)
 -gpgpu_clock_gated_reg_file                    0 # enable clock gated reg file for power calculations

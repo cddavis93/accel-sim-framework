@@ -1,5 +1,0 @@
-{
-  "test_type": "L1_Bypass_Simulation",
-  "status": "PASSED",
-  "description": "Simulated L1 cache bypassing behavior based on current implementation"
-}
