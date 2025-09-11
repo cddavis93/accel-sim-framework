@@ -1,7 +1,7 @@
 source ./gpu-app-collection/src/setup_environment
 source ./gpu-simulator/setup_environment.sh
 
-./util/job_launching/run_simulations.py -B light-gcn -C A100-SASS -T ./hw_run/traces/device-2/12.8/ -N lgcn_A100-SASS
+#./util/job_launching/run_simulations.py -B light-gcn -C A100-SASS -T ./hw_run/traces/device-2/12.8/ -N lgcn_A100-SASS
 ./util/job_launching/run_simulations.py -B light-gcn -C A100_bypass -T ./hw_run/traces/device-2/12.8/ -N lgcn_A100-bypass
 
 #./util/job_launching/monitor_func_test.py -v -N lgcn_A100-SASS
